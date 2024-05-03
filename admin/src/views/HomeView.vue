@@ -3,42 +3,14 @@ import { css } from '@codemirror/lang-css'
 import { html } from '@codemirror/lang-html'
 import { vue } from '@codemirror/lang-vue'
 import { Codemirror } from 'vue-codemirror'
-import { ref, nextTick } from 'vue'
+import { ref } from 'vue'
 import TheCard from '@/components/TheCard.vue'
 
 const extensionsForTemplate = [vue({ base: html() })]
 const extensionsForCss = [css()]
 
-const templateCode = ref(`
-<article class="card-component">
-    <img src="http://localhost:3000/example.png" />
-    <label class="dynamic">some text</label>
-    <p>some description</p>
-    <p>{{ text }}</p>
-  </article>
-`)
-const cssCode = ref(`
-.card-component {
-  display: flex;
-  min-height: 200px;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
-  padding: 10px;
-}
-.card-component img {
-  margin-bottom: 10px;
-}
-.card-component label {
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 12pt;
-}
-.card-component p {
-  margin: 0;
-  font-size: 10pt;
-}
-`)
+const templateCode = ref('')
+const cssCode = ref('')
 const cssForComponent = ref(``)
 const templateForComponent = ref(``)
 
